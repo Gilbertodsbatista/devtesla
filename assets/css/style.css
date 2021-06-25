@@ -1,0 +1,217 @@
+/* VARIAVEIS */
+:root {
+    --header-color: #000;
+    --h1-color: #393C41; 
+    --h2-color: #6E7378; 
+    --link-hover: #000; 
+    --btn-dark-bg: rgba(23, 26, 32, 0.6); 
+    --btn-light-bg: rgba(255, 255, 255, 0.65);
+    --btn-dark-color: #FFF;
+    --btn-light-color: #000;
+}
+/* FONTS */
+@font-face {
+    font-family: GothamMedium;
+    src: url('../fonts/GothamMedium.otf');
+}
+@font-face {
+    font-family: GothamBookRegular;
+    src: url('../fonts/GothamBookRegular.otf');
+}
+@font-face {
+    font-family: MonotonRegular;
+    src: url('../fonts/MonotonRegular.ttf');
+}
+
+body {
+    font-family: 'GothamMedium', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+header ul, header li {
+    list-style: none;
+}
+header .logo {
+    width: 120px;
+    margin-left: 20px;
+}
+header .middle ul {
+    display: flex;
+}
+header .middle li {
+    margin: 0 10px;
+}
+header .middle a {
+    text-decoration: none;
+    color: var(--header-color);
+    text-transform: uppercase;
+}
+header .rightside ul {
+    display: flex;
+}
+header .rightside li {
+    margin: 0 10px;
+}
+header .rightside a {
+    text-decoration: none;
+    color: var(--header-color);
+    text-transform: uppercase;
+}
+header .menu-icon {
+    width: 18px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+header .menu-icon div {
+    height: 2px;
+    background-color: var(--header-color);
+}
+header .leftside a  {
+    color: var(--header-color);
+    font-family: 'MonotonRegular', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+/* MAIN */
+main {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+main .info {
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: normal;
+    color: var(--h1-color);
+}
+main h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'GothamBookRegular', Arial, Helvetica, sans-serif;
+    color: var(--h2-color);
+}
+main h2 a {
+    color: var(--h1-color);
+}
+main h2 a:hover {
+    color: var(--link-hover);
+    box-shadow: 0 2px 0 0 currentColor;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+}
+footer .buttons-area {
+    display: flex;
+    justify-content: center;    
+}
+footer .buttons-area a {
+    display: block;
+    width: 220px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 0 10px;
+    letter-spacing: 1px;
+}
+.btn-dark {
+    background-color: var(--btn-dark-bg);
+    color: var(--btn-dark-color);
+}
+.btn-light {
+    background-color: var(--btn-light-bg);
+    color: var(--btn-light-color);
+}
+.btn-dark:hover {   
+    background-color: var(--btn-light-bg);
+    color: var(--btn-light-color);
+}
+.btn-light:hover {
+    background-color: var(--btn-dark-bg);
+    color: var(--btn-dark-color);
+}
+footer .arrow-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: 30px;
+}
+@keyframes arrow{
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        margin-top: 15px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+footer .arrow {
+    height: 15px;
+    cursor: pointer;
+    animation: arrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* MOBILE */
+
+@media (max-width: 1200px){
+    header .middle {
+        display: none;
+    }
+    header .rightside {
+        display: none;
+    }
+    header .rightside .menu-icon {
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+    footer .buttons-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .buttons-area a {
+        margin: 10px 20px;
+        width: calc(100vw - 60px);
+    }
+}
